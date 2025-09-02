@@ -1,0 +1,98 @@
+# My-Love-site<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I LOVE YOU — Myat Noee Khin</title>
+  <style>
+    :root{
+      --bg1:#0f1020;
+      --bg2:#1b1c34;
+      --accent:#ff4d6d;
+      --accent2:#ff9aa2;
+      --text:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; 
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 70% -10%, #2d1e28 0%, transparent 60%),
+                  radial-gradient(900px 700px at -10% 120%, #1e2a3b 0%, transparent 60%),
+                  linear-gradient(135deg, var(--bg1), var(--bg2));
+      display:grid; place-items:center;
+      overflow:hidden;
+    }
+
+    .wrap{position:relative; text-align:center; padding:3rem;}
+
+    /* Floating particles */
+    .bubble{position:absolute; width:6px; height:6px; border-radius:50%;
+      background:rgba(255,255,255,.15); filter:blur(.5px); animation:float 12s linear infinite;}
+    .bubble:nth-child(1){top:10%; left:15%; animation-duration:13s}
+    .bubble:nth-child(2){top:20%; right:12%; animation-duration:11s}
+    .bubble:nth-child(3){bottom:15%; left:20%; animation-duration:15s}
+    .bubble:nth-child(4){bottom:10%; right:25%; animation-duration:12s}
+    .bubble:nth-child(5){top:45%; left:50%; animation-duration:14s}
+    @keyframes float{0%{transform:translateY(20px)}50%{transform:translateY(-20px)}100%{transform:translateY(20px)}}
+
+    /* Heart */
+    .heart{
+      position:relative; width:140px; height:125px; margin:0 auto 1.25rem; transform:scale(1);
+      animation:beat 1.3s ease-in-out infinite;
+      filter:drop-shadow(0 8px 24px rgba(255,77,109,.45));
+    }
+    .heart:before, .heart:after{
+      content:""; position:absolute; width:70px; height:110px; background:linear-gradient(180deg, var(--accent), var(--accent2));
+      border-radius:70px 70px 0 0; left:70px; top:0; transform-origin:0 100%;
+    }
+    .heart:before{left:0; transform:rotate(-45deg)}
+    .heart:after{left:70px; transform:rotate(45deg)}
+    @keyframes beat{0%,100%{transform:scale(1)} 25%{transform:scale(1.06)} 50%{transform:scale(0.98)} 75%{transform:scale(1.08)}}
+
+    h1{
+      margin:0 0 .25rem 0; font-size:clamp(26px, 5vw, 56px); letter-spacing:.06em; font-weight:800;
+      text-shadow:0 2px 0 rgba(0,0,0,.15), 0 12px 30px rgba(255,77,109,.25);
+    }
+    .name{
+      display:inline-block; padding:.25rem .75rem; border-radius:999px; font-weight:700; letter-spacing:.02em;
+      background:rgba(255,255,255,.08); backdrop-filter: blur(6px); border:1px solid rgba(255,255,255,.12);
+    }
+
+    p.tag{
+      margin:.5rem 0 0; opacity:.85; font-size:clamp(14px, 2.2vw, 18px)
+    }
+
+    /* Button */
+    .btn{
+      margin-top:1.25rem; display:inline-block; text-decoration:none; color:#111; font-weight:700; letter-spacing:.04em;
+      background:linear-gradient(180deg, #ffffff, #dbeafe); border:0; padding:.8rem 1.1rem; border-radius:999px; cursor:pointer;
+      box-shadow:0 8px 20px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.6);
+      transition: transform .15s ease, box-shadow .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.7)}
+
+    /* Footer note */
+    footer{position:fixed; bottom:10px; left:0; right:0; text-align:center; font-size:12px; opacity:.55}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <div class="heart" aria-hidden="true"></div>
+
+    <h1>I LOVE YOU <span class="name">Myat Noee Khin</span></h1>
+    <p class="tag">Forever & always ❤️</p>
+
+    <a class="btn" href="#" onclick="navigator.clipboard.writeText('I LOVE YOU Myat Noee Khin'); return false;">Copy Text</a>
+  </div>
+
+  <footer>I LOVE YOU — handcrafted with ❤</footer>
+</body>
+</html>
